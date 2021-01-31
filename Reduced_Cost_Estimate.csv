@@ -1,0 +1,32 @@
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (N. Virginia),S3 for static web data,S3 Standard,0,5.14,61.68,USD,S3 Standard storage (200 GB per month)
+My Estimate,US East (N. Virginia),S3 for static web data,Data Transfer,0,0,0,USD,"DT Inbound: Internet (200 GB per month), DT Outbound: Amazon CloudFront (600 GB per month)"
+My Estimate,US East (N. Virginia),Web Servers,Amazon EC2,7112,356.530869,11390.37,USD,"Operating system (Red Hat Enterprise Linux), Storage amount (100 GB), DT Inbound: Internet (124 GB per month), DT Outbound: Internet (495 GB per month), DT Intra-Region: (0 TB per month), Workload (Daily, (Workload days: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Baseline: 2, Peak: 4, Duration of peak: 8 Hr 30 Min)), Advance EC2 instance (a1.4xlarge), Pricing strategy (On-Demand and Reserved 1yr All Upfront), Snapshot Frequency (No snapshot storage), Storage amount per io2 volume (100 GB)"
+My Estimate,US East (N. Virginia),App Server,Amazon EC2,34004,971.720591,45664.65,USD,"Operating system (Red Hat Enterprise Linux), Storage amount (200 GB), DT Inbound: Internet (0 TB per month), DT Outbound: Internet (0 GB per month), DT Intra-Region: (0 GB per month), Workload (Weekly, Baseline: 4, Peak: 6, Duration of peak: 3 Day 0 Hr 0 Min), Advance EC2 instance (c6gd.8xlarge), Pricing strategy (undefined 1 Year  Full upfront), Snapshot Frequency (No snapshot storage), Storage amount per io2 volume (200 GB)"
+My Estimate,US East (N. Virginia),App database,Amazon RDS for MySQL,12728,250,15728,USD,"Storage for each RDS instance (Provisioned IOPS SSD (io1)), Storage amount (1000 GB), Quantity (2), Instance type (db.m6g.4xlarge), Deployment option (Single-AZ), Pricing strategy (Reserved 1yr All Upfront)"
+My Estimate,US East (N. Virginia),,Amazon Virtual Private Cloud (VPC),0,75.42,905.04,USD,Number of NAT Gateways (2)
+My Estimate,US East (N. Virginia),,Application Load Balancer,0,56.21,674.52,USD,Number of Application Load Balancers (2)
+My Estimate,US East (N. Virginia),Elastic IPs for web servers,Amazon Elastic IP,0,0,0,USD,"Number of EC2 instances (4), Number of EIPs per instance (1)"
+Total results,,,,53844,1715.02146,74424.26,,
+,,,,,,,,
+,,,,,,,,
+Acknowledgement,,,,,,,,
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,,
+,,,,,,,,
+Table with changes is bellow:,,,,,,,,
+Change,Rationalization,,,,,,,
+Switched  db.m4.4xlarge RDS instances  to db.m6g.4xlarge instances,"We switched from older generation db.m4.4xlarge instance to newest generation db.m6g.4xlarge, because newer version is cheaper and have better performance.  ",,,,,,,
+"RDS reserved: 1yr, all upfront",Our application is stable used for few years and that's why we can reserve RDS instances. We also have some finances from past that's why we can afford to pay upfront and have this service cheaper in finale.,,,,,,,
+"App server: on-demand and reserved, 1 yrs, all upfront",Our application is stable used for few years and that's why we can reserve EC2 instances. We also have some finances from past that's why we can afford to pay upfront and have this service cheaper in finale.,,,,,,,
+"Web server: on-demand and reserved, 1 yrs, all upfront",Our application is stable used for few years and that's why we can reserve EC2 instances. We also have some finances from past that's why we can afford to pay upfront and have this service cheaper in finale.,,,,,,,
+,,,,,,,,
+,,,,,,,,
+Comparision of initial_cost_estimate and reduced_cost_estimate:,,,,,,,,
+Cost estimate,Total upfront,Monthly,Overally per month,Total per years,Saving,,,
+Initial cost estimate,0,"8,513.66","8,513.66","102,163.89","-2,311.64",,,
+Reduced cost estimate,"53,844","1,715.02","6,202.02","74,424.26","2,311.64",,,
+,,,,,,,,
+,,,,,,,,
+Monthly estimates was overally decreased to 6202.02 USD,,,,,,,,
+,,,,,,,,
+Link to AWS Pricing calculator: https://calculator.aws/#/estimate?id=5b4edb9d0c0c1d5c153ff827561800755914bdeb,,,,,,,,

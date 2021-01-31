@@ -1,0 +1,24 @@
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (N. Virginia),S3 for static web data,S3 Standard,0,5.14,61.68,USD,S3 Standard storage (200 GB per month)
+My Estimate,US East (N. Virginia),S3 for static web data,Data Transfer,0,0,0,USD,"DT Inbound: Internet (200 GB per month), DT Outbound: Amazon CloudFront (600 GB per month)"
+My Estimate,US East (N. Virginia),Web Servers,Amazon EC2,0,1142.010869,13704.13,USD,"Operating system (Red Hat Enterprise Linux), Storage amount (100 GB), DT Inbound: Internet (124 GB per month), DT Outbound: Internet (495 GB per month), DT Intra-Region: (0 TB per month), Workload (Daily, (Workload days: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Baseline: 2, Peak: 4, Duration of peak: 8 Hr 30 Min)), Advance EC2 instance (a1.4xlarge), Pricing strategy (undefined), Snapshot Frequency (No snapshot storage), Storage amount per io2 volume (100 GB)"
+My Estimate,US East (N. Virginia),App Server,Amazon EC2,0,4939.416591,59273,USD,"Operating system (Red Hat Enterprise Linux), Storage amount (200 GB), DT Inbound: Internet (0 TB per month), DT Outbound: Internet (0 GB per month), DT Intra-Region: (0 GB per month), Workload (Weekly, Baseline: 4, Peak: 6, Duration of peak: 3 Day 0 Hr 0 Min), Advance EC2 instance (c6gd.8xlarge), Pricing strategy (undefined), Snapshot Frequency (No snapshot storage), Storage amount per io2 volume (200 GB)"
+My Estimate,US East (N. Virginia),App database,Amazon RDS for MySQL,0,2295.46,27545.52,USD,"Storage for each RDS instance (Provisioned IOPS SSD (io1)), Storage amount (1000 GB), Quantity (2), Instance type (db.m4.4xlarge), Deployment option (Single-AZ), Pricing strategy (OnDemand)"
+My Estimate,US East (N. Virginia),,Amazon Virtual Private Cloud (VPC),0,75.42,905.04,USD,Number of NAT Gateways (2)
+My Estimate,US East (N. Virginia),,Application Load Balancer,0,56.21,674.52,USD,Number of Application Load Balancers (2)
+My Estimate,US East (N. Virginia),Elastic IPs for web servers,Amazon Elastic IP,0,0,0,USD,"Number of EC2 instances (4), Number of EIPs per instance (1)"
+Total results,,,,0,8513.65746,102163.89,,
+,,,,,,,,
+,,,,,,,,
+Acknowledgement,,,,,,,,
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,,
+,,,,,,,,
+,,,,,,,,
+Overall results: ,,,,,,,,
+Totally upfront: 0,,,,,,,,
+"Totally per month: 8,513.66 USD",,,,,,,,
+"Totally per year: 102,163.89 USD",,,,,,,,
+Link to AWS Pricing calculation: https://calculator.aws/#/estimate?id=a5764f730aaae1ccd8b2a0c4192c1b8bc1bdbe45,,,,,,,,
+,,,,,,,,
+About app:,,,,,,,,
+We build 3-tier web application that compute results with ML model in application part. That's why we need huge compute power in RDS and App server(application servers). We are also using CloudFront because we want low latency for our worldwide users. CloudFront is pulling static web content from S3 bucket.,,,,,,,,
